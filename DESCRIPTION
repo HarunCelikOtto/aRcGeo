@@ -1,0 +1,19 @@
+Package: aRcGeo
+Type: Package
+Title: An R Binding for Python's Arcpy
+Version: 0.1.0
+Author: Harun Celik
+Maintainer: Harun Celik <hcelik@iastate.edu>
+Description: This package works as an R interface to the `arcpy` python 
+    module used within the ArcGIS Pro and ArcMap products from the ESRI line.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    arcgisbinding,
+    reticulate
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+RoxygenNote: 7.2.3
+Roxygen: list(markdown = TRUE)
