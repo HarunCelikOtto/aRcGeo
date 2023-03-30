@@ -19,3 +19,4 @@ RoxygenNote: 7.2.3
 Roxygen: list(markdown = TRUE)
 Remotes:  
     R-ArcGIS/r-bridge-install
+    R-ArcGIS/r-bridge
