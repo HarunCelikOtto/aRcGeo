@@ -9,3 +9,7 @@ test_that("arc.check_product() returns some license", {
 })
 
 #test_that("An environment path is specified", {})
+
+#test_that("Only one environment path is specified", {})
+
+#test_that("An error is given if path(s) is incorrect" {})
