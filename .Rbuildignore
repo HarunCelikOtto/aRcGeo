@@ -5,3 +5,4 @@
 ^LICENSE\.md$
 ^Documentation_Markdown.Rmd
 ^\.github$
+^README.Rmd
