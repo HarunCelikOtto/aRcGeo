@@ -19,5 +19,4 @@ Config/testthat/edition: 3
 RoxygenNote: 7.2.3
 Roxygen: list(markdown = TRUE)
 Remotes: 
-    R-ArcGIS/r-bridge,
-    R-ArcGIS/r-bridge-install
+    R-ArcGIS/r-bridge
