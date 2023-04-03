@@ -20,6 +20,4 @@ RoxygenNote: 7.2.3
 Roxygen: list(markdown = TRUE)
 Remotes: 
     R-ArcGIS/r-bridge,
-    R-ArcGIS/r-bridge-install,
-    https://r.esri.com/win.binary,
-    url::https://r.esri.com
+    R-ArcGIS/r-bridge-install
