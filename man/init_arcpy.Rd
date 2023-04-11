@@ -2,20 +2,22 @@
 % Please edit documentation in R/init_arcpy.R
 \name{init_arcpy}
 \alias{init_arcpy}
-\title{Initialize Connection to ArcGIS}
+\title{Initialize Connection to ArcGIS and \code{arcpy}}
 \usage{
 init_arcpy(python_env_path = NULL, conda_env = NULL)
 }
 \arguments{
-\item{python_env_path}{This is a string to the python executable path in the \code{arcpy} environment.}
+\item{python_env_path}{Requires a string to the python executable path for the \code{arcpy} environment.}
 
-\item{conda_env}{This is a string of the conda environment name for the \code{arcpy} environment.}
+\item{conda_env}{Requires a string of the conda environment name containing the \code{arcpy} environment.}
 }
 \value{
-The path or environment selected for arcpy and a description of your ArcGIS product using arcgisbinding::arc.check_product().
+A global variable called \code{arcpy} loaded as a python module and the output of
+arcgisbinding::arc.check_product() detailing ESRI product information.
 }
 \description{
-Initialize Connection to ArcGIS
+The function initializes a connection to either ArcGIS Pro or ArcMap and also loads
+the \code{arcpy} python module into the global environment.
 }
 \examples{
 \dontrun{

@@ -1,11 +1,6 @@
 # ------------------------------------------------------------------------------
 ## Area for function return testing
 
-test_that("arc.check_product() returns a license", {
-  check_product <- arc.check_product()
-  expect_identical(class(arc.check_product()), class(check_product))
-})
-
 test_that("Specified conda_env exists", {
   all_condas <- conda_list()
   all_condas_name <- all_condas$name
@@ -38,7 +33,6 @@ test_that("Both conda_env and python_env_path have to be characters", {
 test_that("If no argument is provided, an error occurs", {
   expect_error(init_arcpy())
 })
-
 
 # ------------------------------------------------------------------------------
 ## Area for cli testing

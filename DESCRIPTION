@@ -10,13 +10,12 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports: 
-    arcgisbinding (>= 1.0.1.300),
     cli,
     reticulate
 Suggests: 
+    arcgisbinding (>= 1.0.1.300),
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 RoxygenNote: 7.2.3
 Roxygen: list(markdown = TRUE)
 Remotes: 
-    R-ArcGIS/r-bridge

@@ -1,9 +1,14 @@
-#' Initialize Connection to ArcGIS
+#' Initialize Connection to ArcGIS and `arcpy`
 #'
 #' @export
-#' @param python_env_path This is a string to the python executable path in the `arcpy` environment.
-#' @param conda_env This is a string of the conda environment name for the `arcpy` environment.
-#' @return The path or environment selected for arcpy and a description of your ArcGIS product using arcgisbinding::arc.check_product().
+#' @description
+#' The function initializes a connection to either ArcGIS Pro or ArcMap and also loads
+#' the `arcpy` python module into the global environment.
+#'
+#' @param python_env_path Requires a string to the python executable path for the `arcpy` environment.
+#' @param conda_env Requires a string of the conda environment name containing the `arcpy` environment.
+#' @return A global variable called `arcpy` loaded as a python module and the output of
+#' arcgisbinding::arc.check_product() detailing ESRI product information.
 #' @examples
 #' \dontrun{
 #' init_arcpy(python_env_path = "C:/ESRI/conda/envs/{conda environment name}/python.exe")
@@ -12,17 +17,17 @@
 #' # license: Advanced
 #' # version: 1.0.1.300
 #' }
-#' @importFrom arcgisbinding arc.check_product
 #' @importFrom reticulate use_python use_condaenv import conda_list
 #' @importFrom cli cli_h1 cli_alert cli_alert_success cli_alert_info cli_abort
 #' cli_progress_bar cli_progress_update cli_progress_message
 
 init_arcpy <- function(python_env_path = NULL, conda_env = NULL) {
+
   options(cli.palette = "dichro")
   cli_h1("Initializing Connection")
   cli_alert("Initializing Connection to ArcGIS.")
   # initialize a connection to ArcGIS
-  arc.check_product()
+  check_product()
   arcpy <- NULL
 
   # If a python path is given, use python executable for reticulate.
@@ -109,15 +114,7 @@ init_arcpy <- function(python_env_path = NULL, conda_env = NULL) {
     stop()
   }
 
-  # # Make sure that arcpy is not an empty module (currently useless since errors are already handled by python's ModuleNotFoundError)
-  # cli_h1("Checking Arcpy Module")
-  # cli_progress_message("Checking that The correct arcpy module is selected.")
-  # if (test_that("Check that arcpy is a module", {expect_type(arcpy, type = "environment")}) == TRUE) {
-  # } else {
-  #   cli_bort("imported arcpy is not recognized as a module")
-  #   stop()
-  # }
-
+  Sys.sleep(5)
   cli_alert_info("ArcGIS Product Details:")
-  return(arc.check_product())
+  return(c(check_product(), arcpy))
 }
