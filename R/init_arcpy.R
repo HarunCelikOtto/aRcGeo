@@ -59,7 +59,7 @@ init_arcpy <- function(python_env_path = NULL, conda_env = NULL) {
     use_python(python_env_path)
 
     # Import the arcpy module as a global variable.
-    arcpy <<- import("arcpy", delay_load = TRUE)
+    arcpy <<- import("arcpy", delay_load = FALSE)
     cli_alert_success("An `arcpy` module successfully imported.")
   }
   #If a conda environment name is given, use conda environment for reticulate.
@@ -99,7 +99,7 @@ init_arcpy <- function(python_env_path = NULL, conda_env = NULL) {
     use_condaenv(conda_env)
 
     # Import the arcpy module as a global variable.
-    arcpy <<- import("arcpy", delay_load = TRUE)
+    arcpy <<- import("arcpy", delay_load = FALSE)
     cli_alert_success("An `arcpy` module successfully imported.")
   }
 
