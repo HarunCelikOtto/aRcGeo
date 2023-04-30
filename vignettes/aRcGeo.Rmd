@@ -1,0 +1,74 @@
+---
+title: "aRcGeo"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{aRcGeo}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Installing aRcGeo
+
+You can install the development version of `aRcGeo` from GitHub with:
+
+```{r, eval=FALSE}
+# install.packages("devtools")
+devtools::install_github("HarunCelikOtto/aRcGeo")
+```
+
+Once installed, load the library with:
+
+```{r setup}
+library(aRcGeo)
+```
+
+The first time the library is loaded, you should receive a message asking you to have the package `arcgisbinding` loaded already. This is because the functions verifying ArcGIS licenses in `aRcGeo` use the `arcgisbinding` package.
+
+## Initializing an ArcGIS Connection
+
+The main purpose of the `aRcGeo` package is to provide a streamlined process for initializing a connection to ArcGIS and importing the `arcpy` python module at the same time. This is achieved using the `aRcGeo::init_arcpy()` function.
+
+`init_arcpy()` takes one of two string arguments.
+
+-   `conda_env =  "conda environment name"`
+
+-   `python_env_path = "string path to python.exe"`
+
+Since all installations of `arcpy` in ArcGIS Pro use a conda environment, it is easiest to supply the conda environment name as the `conda_env` argument.
+
+You can check the name of your conda environment using `reticulate::conda_list()`.
+
+```{r}
+
+# List your conda environments with Reticulate
+
+# install.packages("reticulate")
+reticulate::conda_list() |> 
+  as.list() |> 
+  magrittr::extract2(1)
+```
+
+## Calling `init_arcpy()`
+
+After confirming the name of the conda environment where `arcpy` exists, we can call `init_arcpy()` to initialize an ArcGIS connection:
+
+```{r}
+aRcGeo::init_arcpy(conda_env = "arcgispro-py3-DeepLearning")
+```
+
+## Examples of `arcpy` Functionality
+
+If the function call completed without an error, then the user should now see `arcpy` as a module in their R Environment. This means that all of the functionality of `arcpy` can now be used in an R session.
+
+Here is a basic call to the `ListEnvironments()` function in `arcypy`.
+
+```{r}
+arcpy$ListEnvironments()
+```
