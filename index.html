@@ -90,26 +90,42 @@
 <p>The <code><a href="reference/init_arcpy.html">init_arcpy()</a></code> function takes the name of your cloned conda environment or cloned python executable path for <code>arcpy</code>. It will activate a license using <code>arcgisbinding::arc.check_product()</code> and set executable paths for <code>reticulate</code> to run python functions.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://haruncelikotto.github.io/aRcGeo/">aRcGeo</a></span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># This is using a conda environment name.</span></span>
-<span><span class="fu"><a href="reference/init_arcpy.html">init_arcpy</a></span><span class="op">(</span>conda_env <span class="op">=</span> <span class="st">"arcgispro-py3-DeepLearning"</span><span class="op">)</span></span>
-<span><span class="co">## </span></span>
-<span><span class="co">## ── Initializing Connection ─────────────────────────────────────────────────────</span></span>
-<span><span class="co">## → Initializing Connection to ArcGIS.</span></span>
-<span><span class="co">## </span></span>
-<span><span class="co">## ── Checking Conda Environment ──────────────────────────────────────────────────</span></span>
-<span><span class="co">## Setting Conda Environments.                            ℹ All Local Conda Environments:</span></span>
-<span><span class="co">## Setting Conda Environments.</span></span>
-<span><span class="co">## [1] "arcgispro-py3-DeepLearning" "base"                      </span></span>
-<span><span class="co">## [3] "r-reticulate"               "anaconda3"</span></span>
-<span><span class="co">##                             ✔ Using conda environment: arcgispro-py3-DeepLearning</span></span>
-<span><span class="co">## Setting Conda Environments.Connecting to `arcpy`. ■■■■■■                            16% | ETA:  5sConnecting to `arcpy`. ■■■■■■                            17% | ETA:  5sConnecting to `arcpy`. ■■■■■■■                           19% | ETA:  6sConnecting to `arcpy`. ■■■■■■■■                          22% | ETA:  5sConnecting to `arcpy`. ■■■■■■■■■                         25% | ETA:  5sConnecting to `arcpy`. ■■■■■■■■■                         27% | ETA:  5sConnecting to `arcpy`. ■■■■■■■■■■                        30% | ETA:  5sConnecting to `arcpy`. ■■■■■■■■■■■                       33% | ETA:  5sConnecting to `arcpy`. ■■■■■■■■■■■■                      36% | ETA:  5sConnecting to `arcpy`. ■■■■■■■■■■■■                      38% | ETA:  4sConnecting to `arcpy`. ■■■■■■■■■■■■■                     41% | ETA:  4sConnecting to `arcpy`. ■■■■■■■■■■■■■■                    44% | ETA:  4sConnecting to `arcpy`. ■■■■■■■■■■■■■■■                   46% | ETA:  4sConnecting to `arcpy`. ■■■■■■■■■■■■■■■■                  49% | ETA:  4sConnecting to `arcpy`. ■■■■■■■■■■■■■■■■■                 52% | ETA:  3sConnecting to `arcpy`. ■■■■■■■■■■■■■■■■■                 54% | ETA:  3sConnecting to `arcpy`. ■■■■■■■■■■■■■■■■■■                57% | ETA:  3sConnecting to `arcpy`. ■■■■■■■■■■■■■■■■■■■               60% | ETA:  3sConnecting to `arcpy`. ■■■■■■■■■■■■■■■■■■■■              63% | ETA:  3sConnecting to `arcpy`. ■■■■■■■■■■■■■■■■■■■■■             65% | ETA:  3sConnecting to `arcpy`. ■■■■■■■■■■■■■■■■■■■■■             68% | ETA:  2sConnecting to `arcpy`. ■■■■■■■■■■■■■■■■■■■■■■            71% | ETA:  2sConnecting to `arcpy`. ■■■■■■■■■■■■■■■■■■■■■■■           73% | ETA:  2sConnecting to `arcpy`. ■■■■■■■■■■■■■■■■■■■■■■■■          76% | ETA:  2sConnecting to `arcpy`. ■■■■■■■■■■■■■■■■■■■■■■■■■         79% | ETA:  2sConnecting to `arcpy`. ■■■■■■■■■■■■■■■■■■■■■■■■■■        82% | ETA:  1sConnecting to `arcpy`. ■■■■■■■■■■■■■■■■■■■■■■■■■■        84% | ETA:  1sConnecting to `arcpy`. ■■■■■■■■■■■■■■■■■■■■■■■■■■■       87% | ETA:  1sConnecting to `arcpy`. ■■■■■■■■■■■■■■■■■■■■■■■■■■■■      90% | ETA:  1sConnecting to `arcpy`. ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     92% | ETA:  1sConnecting to `arcpy`. ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     95% | ETA:  0sConnecting to `arcpy`. ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■    98% | ETA:  0s                                                                        Setting Conda Environments.                            ✔ An `arcpy` module successfully imported.</span></span>
-<span><span class="co">## Setting Conda Environments.                            ℹ ArcGIS Product Details:</span></span>
-<span><span class="co">## Setting Conda Environments.                            </span></span>
-<span><span class="co">## product: ArcGIS Pro (13.1.0.41833)</span></span>
-<span><span class="co">## license: Advanced</span></span>
-<span><span class="co">## version: 1.0.1.300</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="do">## The functions in this library require the user to have `arcgisbinding` loaded.</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="do">##                       Please load `library(arcgisbinding)` before running any aRcGeo functions.</span></span></code></pre></div>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># This is using a conda environment name.</span></span>
+<span><span class="fu"><a href="reference/init_arcpy.html">init_arcpy</a></span><span class="op">(</span>conda_env <span class="op">=</span> <span class="st">"arcgispro-py3-DeepLearning"</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="sc">--</span> Initializing Connection <span class="sc">---------------------------------------------------------------------</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> Initializing Connection to ArcGIS.</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="sc">--</span> Checking Conda Environment <span class="sc">---------------------------------------------------------------------</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>i All Local Conda Environments<span class="sc">:</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"base"</span>                       </span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>[<span class="dv">2</span>] <span class="st">"Python_Image_Processing"</span>    </span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>[<span class="dv">3</span>] <span class="st">"arcgispro-py3-DeepLearning"</span> </span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>[<span class="dv">4</span>] <span class="st">"r-miniconda"</span>               </span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>[<span class="dv">5</span>] <span class="st">"r-reticulate"</span>              </span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>v Using conda environment<span class="sc">:</span> arcgispro<span class="sc">-</span>py3<span class="sc">-</span>DeepLearning</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>v An <span class="st">`</span><span class="at">arcpy</span><span class="st">`</span> module successfully imported.                              </span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>i ArcGIS Product Details<span class="sc">:</span>   </span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="er">$</span>license                    </span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"Advanced"</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span>version</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"13.1.0.41833"</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span>path</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"C:</span><span class="sc">\\</span><span class="st">Program Files</span><span class="sc">\\</span><span class="st">ArcGIS</span><span class="sc">\\</span><span class="st">Pro</span><span class="sc">\\</span><span class="st">"</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span>dll</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"rarcproxy_pro"</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span>app</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"ArcGIS Pro"</span></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span>pkg_ver</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"1.0.1.300"</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#This is if using a python.exe path is preferred.</span></span>
 <span><span class="va">path</span> <span class="op">=</span> <span class="st">"C:\\Any_Correctly_Formatted_Python_Path\\python.exe"</span></span>
 <span><span class="fu"><a href="reference/init_arcpy.html">init_arcpy</a></span><span class="op">(</span>python_env_path <span class="op">=</span> <span class="va">path</span><span class="op">)</span></span></code></pre></div>
@@ -121,13 +137,13 @@
 <h3 id="load-reticulate">Load <code>reticulate</code>
 <a class="anchor" aria-label="anchor" href="#load-reticulate"></a>
 </h3>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://rstudio.github.io/reticulate/" class="external-link">reticulate</a></span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="setting-workspace-to-a-geodatabase">Setting Workspace to a Geodatabase<a class="anchor" aria-label="anchor" href="#setting-workspace-to-a-geodatabase"></a>
 </h3>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">os</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rstudio.github.io/reticulate/reference/import.html" class="external-link">import</a></span><span class="op">(</span><span class="st">"os"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">gdatabasename</span> <span class="op">=</span> <span class="st">"ARcGeo_Example.gdb"</span></span>
@@ -135,64 +151,64 @@
 <span><span class="va">workingenv</span> <span class="op">=</span> <span class="va">os</span><span class="op">$</span><span class="va">path</span><span class="op">$</span><span class="fu">join</span><span class="op">(</span><span class="va">currentdir</span>, <span class="va">gdatabasename</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">arcpy</span><span class="op">$</span><span class="va">env</span><span class="op">$</span><span class="va">workspace</span> <span class="op">=</span> <span class="va">workingenv</span></span></code></pre></div>
-<pre><code><span><span class="co">## Current ArcGIS workspace environment is set to 'C:\temp\ArcGeo_Example\ARcGeo_Example.gdb'</span></span></code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Current ArcGIS workspace environment is set to 'C:\temp\ArcGeo_Example\ARcGeo_Example.gdb'</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="listing-arcpy-environments">Listing <code>arcpy</code> Environments<a class="anchor" aria-label="anchor" href="#listing-arcpy-environments"></a>
 </h3>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/getwd.html" class="external-link">setwd</a></span><span class="op">(</span><span class="va">currentdir</span><span class="op">)</span></span>
 <span><span class="va">arcpy</span><span class="op">$</span><span class="fu">ListEnvironments</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">##  [1] "autoCommit"                      "XYResolution"                   </span></span>
-<span><span class="co">##  [3] "processingServerUser"            "gpuId"                          </span></span>
-<span><span class="co">##  [5] "XYDomain"                        "processingServerPassword"       </span></span>
-<span><span class="co">##  [7] "scratchWorkspace"                "recycleProcessingWorkers"       </span></span>
-<span><span class="co">##  [9] "cartographicPartitions"          "terrainMemoryUsage"             </span></span>
-<span><span class="co">## [11] "MTolerance"                      "compression"                    </span></span>
-<span><span class="co">## [13] "coincidentPoints"                "baUseDetailedAggregation"       </span></span>
-<span><span class="co">## [15] "timeZone"                        "randomGenerator"                </span></span>
-<span><span class="co">## [17] "outputCoordinateSystem"          "rasterStatistics"               </span></span>
-<span><span class="co">## [19] "transferGDBAttributeProperties"  "ZDomain"                        </span></span>
-<span><span class="co">## [21] "cellSizeProjectionMethod"        "maintainCurveSegments"          </span></span>
-<span><span class="co">## [23] "transferDomains"                 "S100FeatureCatalogueFile"       </span></span>
-<span><span class="co">## [25] "maintainAttachments"             "resamplingMethod"               </span></span>
-<span><span class="co">## [27] "snapRaster"                      "cartographicCoordinateSystem"   </span></span>
-<span><span class="co">## [29] "baNetworkSource"                 "configKeyword"                  </span></span>
-<span><span class="co">## [31] "matchMultidimensionalVariable"   "outputZFlag"                    </span></span>
-<span><span class="co">## [33] "qualifiedFieldNames"             "tileSize"                       </span></span>
-<span><span class="co">## [35] "annotationTextStringFieldLength" "parallelProcessingFactor"       </span></span>
-<span><span class="co">## [37] "pyramid"                         "referenceScale"                 </span></span>
-<span><span class="co">## [39] "processingServer"                "extent"                         </span></span>
-<span><span class="co">## [41] "unionDimension"                  "XYTolerance"                    </span></span>
-<span><span class="co">## [43] "daylightSaving"                  "tinSaveVersion"                 </span></span>
-<span><span class="co">## [45] "nodata"                          "MDomain"                        </span></span>
-<span><span class="co">## [47] "cellSize"                        "outputZValue"                   </span></span>
-<span><span class="co">## [49] "outputMFlag"                     "cellAlignment"                  </span></span>
-<span><span class="co">## [51] "geographicTransformations"       "ZResolution"                    </span></span>
-<span><span class="co">## [53] "mask"                            "processorType"                  </span></span>
-<span><span class="co">## [55] "maintainSpatialIndex"            "preserveGlobalIds"              </span></span>
-<span><span class="co">## [57] "workspace"                       "retryOnFailures"                </span></span>
-<span><span class="co">## [59] "MResolution"                     "baDataSource"                   </span></span>
-<span><span class="co">## [61] "ZTolerance"                      "scratchGDB"                     </span></span>
-<span><span class="co">## [63] "scratchFolder"                   "packageWorkspace"               </span></span>
-<span><span class="co">## [65] "scriptWorkspace"                 "addOutputsToMap"                </span></span>
-<span><span class="co">## [67] "buildStatsAndRATForTempRaster"   "autoCancelling"                 </span></span>
-<span><span class="co">## [69] "isCancelled"                     "overwriteOutput"</span></span></code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="do">##  [1] "autoCommit"                      "XYResolution"                   </span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="do">##  [3] "processingServerUser"            "gpuId"                          </span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="do">##  [5] "XYDomain"                        "processingServerPassword"       </span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="do">##  [7] "scratchWorkspace"                "recycleProcessingWorkers"       </span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="do">##  [9] "cartographicPartitions"          "terrainMemoryUsage"             </span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [11] "MTolerance"                      "compression"                    </span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [13] "coincidentPoints"                "baUseDetailedAggregation"       </span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [15] "timeZone"                        "randomGenerator"                </span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="do">## [17] "outputCoordinateSystem"          "rasterStatistics"               </span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="do">## [19] "transferGDBAttributeProperties"  "ZDomain"                        </span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="do">## [21] "cellSizeProjectionMethod"        "maintainCurveSegments"          </span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="do">## [23] "transferDomains"                 "S100FeatureCatalogueFile"       </span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="do">## [25] "maintainAttachments"             "resamplingMethod"               </span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="do">## [27] "snapRaster"                      "cartographicCoordinateSystem"   </span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="do">## [29] "baNetworkSource"                 "configKeyword"                  </span></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a><span class="do">## [31] "matchMultidimensionalVariable"   "outputZFlag"                    </span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a><span class="do">## [33] "qualifiedFieldNames"             "tileSize"                       </span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a><span class="do">## [35] "annotationTextStringFieldLength" "parallelProcessingFactor"       </span></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a><span class="do">## [37] "pyramid"                         "referenceScale"                 </span></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a><span class="do">## [39] "processingServer"                "extent"                         </span></span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a><span class="do">## [41] "unionDimension"                  "XYTolerance"                    </span></span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a><span class="do">## [43] "daylightSaving"                  "tinSaveVersion"                 </span></span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a><span class="do">## [45] "nodata"                          "MDomain"                        </span></span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a><span class="do">## [47] "cellSize"                        "outputZValue"                   </span></span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a><span class="do">## [49] "outputMFlag"                     "cellAlignment"                  </span></span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a><span class="do">## [51] "geographicTransformations"       "ZResolution"                    </span></span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a><span class="do">## [53] "mask"                            "processorType"                  </span></span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a><span class="do">## [55] "maintainSpatialIndex"            "preserveGlobalIds"              </span></span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a><span class="do">## [57] "workspace"                       "retryOnFailures"                </span></span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a><span class="do">## [59] "MResolution"                     "baDataSource"                   </span></span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a><span class="do">## [61] "ZTolerance"                      "scratchGDB"                     </span></span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a><span class="do">## [63] "scratchFolder"                   "packageWorkspace"               </span></span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a><span class="do">## [65] "scriptWorkspace"                 "addOutputsToMap"                </span></span>
+<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a><span class="do">## [67] "buildStatsAndRATForTempRaster"   "autoCancelling"                 </span></span>
+<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a><span class="do">## [69] "isCancelled"                     "overwriteOutput"</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="checking-out-extensions">Checking Out Extensions<a class="anchor" aria-label="anchor" href="#checking-out-extensions"></a>
 </h3>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sprintf.html" class="external-link">sprintf</a></span><span class="op">(</span><span class="st">"Spatial extension is: %s"</span>, <span class="va">arcpy</span><span class="op">$</span><span class="fu">CheckOutExtension</span><span class="op">(</span><span class="st">"Spatial"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## [1] "Spatial extension is: CheckedOut"</span></span></code></pre>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sprintf.html" class="external-link">sprintf</a></span><span class="op">(</span><span class="st">"Spatial extension is: %s"</span>, <span class="va">arcpy</span><span class="op">$</span><span class="fu">CheckOutExtension</span><span class="op">(</span><span class="st">"Spatial"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "Spatial extension is: CheckedOut"</span></span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sprintf.html" class="external-link">sprintf</a></span><span class="op">(</span><span class="st">"Indoors extension is: %s"</span>, <span class="va">arcpy</span><span class="op">$</span><span class="fu">CheckOutExtension</span><span class="op">(</span><span class="st">"Indoors"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## [1] "Indoors extension is: NotLicensed"</span></span></code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "Indoors extension is: NotLicensed"</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="checking-out-help-documentation">Checking out Help Documentation<a class="anchor" aria-label="anchor" href="#checking-out-help-documentation"></a>
 </h3>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rstudio.github.io/reticulate/reference/py_help.html" class="external-link">py_help</a></span><span class="op">(</span><span class="va">arcpy</span><span class="op">$</span><span class="va">AcceptConnections</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co">## This will output a text file with documentation for Python Objects</span></span></code></pre></div>
