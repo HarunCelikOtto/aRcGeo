@@ -45,7 +45,7 @@ Since all installations of `arcpy` in ArcGIS Pro use a conda environment, it is 
 
 You can check the name of your conda environment using `reticulate::conda_list()`.
 
-```{r}
+```{r, eval=FALSE}
 
 # List your conda environments with Reticulate
 
@@ -54,6 +54,15 @@ reticulate::conda_list() |>
   as.list() |> 
   magrittr::extract2(1)
 ```
+
+```{r, eval=FALSE}
+[1] "base"                       
+[2] "Python_Image_Processing"    
+[3] "arcgispro-py3-DeepLearning" 
+[4] "r-miniconda"               
+[5] "r-reticulate" 
+```
+
 
 ## Calling `init_arcpy()`
 
