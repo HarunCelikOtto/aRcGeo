@@ -3,6 +3,8 @@ aRcGeo
 Harun Celik
 2023-04-01
 
+<a href="https://haruncelikotto.github.io/aRcGeo/"><img src="man/figures/logo.png" align="right" height="139" /></a>
+
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/HarunCelikOtto/aRcGeo/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/HarunCelikOtto/aRcGeo/actions/workflows/R-CMD-check.yaml)
