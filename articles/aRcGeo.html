@@ -109,8 +109,12 @@ the <code>conda_env</code> argument.</p>
 <span><span class="co"># install.packages("reticulate")</span></span>
 <span><span class="fu">reticulate</span><span class="fu">::</span><span class="fu"><a href="https://rstudio.github.io/reticulate/reference/conda-tools.html" class="external-link">conda_list</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">as.list</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">magrittr</span><span class="fu">::</span><span class="fu"><a href="https://magrittr.tidyverse.org/reference/aliases.html" class="external-link">extract2</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "base"</span></span></code></pre></div>
+<span>  <span class="fu">magrittr</span><span class="fu">::</span><span class="fu"><a href="https://magrittr.tidyverse.org/reference/aliases.html" class="external-link">extract2</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"base"</span>                       </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>[<span class="dv">2</span>] <span class="st">"Python_Image_Processing"</span>    </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>[<span class="dv">3</span>] <span class="st">"arcgispro-py3-DeepLearning"</span> </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>[<span class="dv">4</span>] <span class="st">"r-miniconda"</span>               </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>[<span class="dv">5</span>] <span class="st">"r-reticulate"</span> </span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="calling-init_arcpy">Calling <code>init_arcpy()</code><a class="anchor" aria-label="anchor" href="#calling-init_arcpy"></a>
@@ -118,39 +122,39 @@ the <code>conda_env</code> argument.</p>
 <p>After confirming the name of the conda environment where
 <code>arcpy</code> exists, we can call <code><a href="../reference/init_arcpy.html">init_arcpy()</a></code> to
 initialize an ArcGIS connection:</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">aRcGeo</span><span class="fu">::</span><span class="fu"><a href="../reference/init_arcpy.html">init_arcpy</a></span><span class="op">(</span>conda_env <span class="op">=</span> <span class="st">"arcgispro-py3-DeepLearning"</span><span class="op">)</span></span></code></pre></div>
 <p>Output:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="sc">--</span> Initializing Connection <span class="sc">---------------------------------------------------------------------</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> Initializing Connection to ArcGIS.</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="sc">--</span> Checking Conda Environment <span class="sc">---------------------------------------------------------------------</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>i All Local Conda Environments<span class="sc">:</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"base"</span>                       </span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>[<span class="dv">2</span>] <span class="st">"Python_Image_Processing"</span>    </span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>[<span class="dv">3</span>] <span class="st">"arcgispro-py3-DeepLearning"</span> </span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>[<span class="dv">4</span>] <span class="st">"r-miniconda"</span>               </span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>[<span class="dv">5</span>] <span class="st">"r-reticulate"</span>              </span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>v Using conda environment<span class="sc">:</span> arcgispro<span class="sc">-</span>py3<span class="sc">-</span>DeepLearning</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>v An <span class="st">`</span><span class="at">arcpy</span><span class="st">`</span> module successfully imported.                              </span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>i ArcGIS Product Details<span class="sc">:</span>   </span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="er">$</span>license                    </span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"Advanced"</span></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span>version</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"13.1.0.41833"</span></span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span>path</span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"C:</span><span class="sc">\\</span><span class="st">Program Files</span><span class="sc">\\</span><span class="st">ArcGIS</span><span class="sc">\\</span><span class="st">Pro</span><span class="sc">\\</span><span class="st">"</span></span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span>dll</span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"rarcproxy_pro"</span></span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span>app</span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"ArcGIS Pro"</span></span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span>pkg_ver</span>
-<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"1.0.1.300"</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="sc">--</span> Initializing Connection <span class="sc">---------------------------------------------------------------------</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="er">&gt;</span> Initializing Connection to ArcGIS.</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="sc">--</span> Checking Conda Environment <span class="sc">---------------------------------------------------------------------</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>i All Local Conda Environments<span class="sc">:</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"base"</span>                       </span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>[<span class="dv">2</span>] <span class="st">"Python_Image_Processing"</span>    </span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>[<span class="dv">3</span>] <span class="st">"arcgispro-py3-DeepLearning"</span> </span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>[<span class="dv">4</span>] <span class="st">"r-miniconda"</span>               </span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>[<span class="dv">5</span>] <span class="st">"r-reticulate"</span>              </span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>v Using conda environment<span class="sc">:</span> arcgispro<span class="sc">-</span>py3<span class="sc">-</span>DeepLearning</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>v An <span class="st">`</span><span class="at">arcpy</span><span class="st">`</span> module successfully imported.                              </span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>i ArcGIS Product Details<span class="sc">:</span>   </span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="er">$</span>license                    </span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"Advanced"</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span>version</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"13.1.0.41833"</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span>path</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"C:</span><span class="sc">\\</span><span class="st">Program Files</span><span class="sc">\\</span><span class="st">ArcGIS</span><span class="sc">\\</span><span class="st">Pro</span><span class="sc">\\</span><span class="st">"</span></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span>dll</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"rarcproxy_pro"</span></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span>app</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"ArcGIS Pro"</span></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a><span class="sc">$</span>pkg_ver</span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"1.0.1.300"</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="examples-of-arcpy-functionality">Examples of <code>arcpy</code> Functionality<a class="anchor" aria-label="anchor" href="#examples-of-arcpy-functionality"></a>
@@ -161,44 +165,44 @@ means that all of the functionality of <code>arcpy</code> can now be
 used in an R session.</p>
 <p>Here is a basic call to the <code>ListEnvironments()</code> function
 in <code>arcypy</code>.</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">arcpy</span><span class="op">$</span><span class="fu">ListEnvironments</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p>Output:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a> [<span class="dv">1</span>] <span class="st">"autoCommit"</span>                      <span class="st">"XYResolution"</span>                   </span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a> [<span class="dv">3</span>] <span class="st">"processingServerUser"</span>            <span class="st">"gpuId"</span>                          </span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a> [<span class="dv">5</span>] <span class="st">"XYDomain"</span>                        <span class="st">"processingServerPassword"</span>       </span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a> [<span class="dv">7</span>] <span class="st">"scratchWorkspace"</span>                <span class="st">"recycleProcessingWorkers"</span>       </span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a> [<span class="dv">9</span>] <span class="st">"cartographicPartitions"</span>          <span class="st">"terrainMemoryUsage"</span>             </span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>[<span class="dv">11</span>] <span class="st">"MTolerance"</span>                      <span class="st">"compression"</span>                    </span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>[<span class="dv">13</span>] <span class="st">"coincidentPoints"</span>                <span class="st">"baUseDetailedAggregation"</span>       </span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>[<span class="dv">15</span>] <span class="st">"timeZone"</span>                        <span class="st">"randomGenerator"</span>                </span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>[<span class="dv">17</span>] <span class="st">"outputCoordinateSystem"</span>          <span class="st">"rasterStatistics"</span>               </span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>[<span class="dv">19</span>] <span class="st">"transferGDBAttributeProperties"</span>  <span class="st">"ZDomain"</span>                        </span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>[<span class="dv">21</span>] <span class="st">"cellSizeProjectionMethod"</span>        <span class="st">"maintainCurveSegments"</span>          </span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>[<span class="dv">23</span>] <span class="st">"transferDomains"</span>                 <span class="st">"S100FeatureCatalogueFile"</span>       </span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>[<span class="dv">25</span>] <span class="st">"maintainAttachments"</span>             <span class="st">"resamplingMethod"</span>               </span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>[<span class="dv">27</span>] <span class="st">"snapRaster"</span>                      <span class="st">"cartographicCoordinateSystem"</span>   </span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>[<span class="dv">29</span>] <span class="st">"baNetworkSource"</span>                 <span class="st">"configKeyword"</span>                  </span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>[<span class="dv">31</span>] <span class="st">"matchMultidimensionalVariable"</span>   <span class="st">"outputZFlag"</span>                    </span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>[<span class="dv">33</span>] <span class="st">"qualifiedFieldNames"</span>             <span class="st">"tileSize"</span>                       </span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>[<span class="dv">35</span>] <span class="st">"annotationTextStringFieldLength"</span> <span class="st">"parallelProcessingFactor"</span>       </span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>[<span class="dv">37</span>] <span class="st">"pyramid"</span>                         <span class="st">"referenceScale"</span>                 </span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>[<span class="dv">39</span>] <span class="st">"processingServer"</span>                <span class="st">"extent"</span>                         </span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>[<span class="dv">41</span>] <span class="st">"unionDimension"</span>                  <span class="st">"XYTolerance"</span>                    </span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>[<span class="dv">43</span>] <span class="st">"daylightSaving"</span>                  <span class="st">"tinSaveVersion"</span>                 </span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>[<span class="dv">45</span>] <span class="st">"nodata"</span>                          <span class="st">"MDomain"</span>                        </span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>[<span class="dv">47</span>] <span class="st">"cellSize"</span>                        <span class="st">"outputZValue"</span>                   </span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>[<span class="dv">49</span>] <span class="st">"outputMFlag"</span>                     <span class="st">"cellAlignment"</span>                  </span>
-<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>[<span class="dv">51</span>] <span class="st">"geographicTransformations"</span>       <span class="st">"ZResolution"</span>                    </span>
-<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>[<span class="dv">53</span>] <span class="st">"mask"</span>                            <span class="st">"processorType"</span>                  </span>
-<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>[<span class="dv">55</span>] <span class="st">"maintainSpatialIndex"</span>            <span class="st">"preserveGlobalIds"</span>              </span>
-<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>[<span class="dv">57</span>] <span class="st">"workspace"</span>                       <span class="st">"retryOnFailures"</span>                </span>
-<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>[<span class="dv">59</span>] <span class="st">"MResolution"</span>                     <span class="st">"baDataSource"</span>                   </span>
-<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>[<span class="dv">61</span>] <span class="st">"ZTolerance"</span>                      <span class="st">"scratchGDB"</span>                     </span>
-<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>[<span class="dv">63</span>] <span class="st">"scratchFolder"</span>                   <span class="st">"packageWorkspace"</span>               </span>
-<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>[<span class="dv">65</span>] <span class="st">"scriptWorkspace"</span>                 <span class="st">"addOutputsToMap"</span>                </span>
-<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>[<span class="dv">67</span>] <span class="st">"buildStatsAndRATForTempRaster"</span>   <span class="st">"autoCancelling"</span>                 </span>
-<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>[<span class="dv">69</span>] <span class="st">"isCancelled"</span>                     <span class="st">"overwriteOutput"</span>  </span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a> [<span class="dv">1</span>] <span class="st">"autoCommit"</span>                      <span class="st">"XYResolution"</span>                   </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a> [<span class="dv">3</span>] <span class="st">"processingServerUser"</span>            <span class="st">"gpuId"</span>                          </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a> [<span class="dv">5</span>] <span class="st">"XYDomain"</span>                        <span class="st">"processingServerPassword"</span>       </span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a> [<span class="dv">7</span>] <span class="st">"scratchWorkspace"</span>                <span class="st">"recycleProcessingWorkers"</span>       </span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a> [<span class="dv">9</span>] <span class="st">"cartographicPartitions"</span>          <span class="st">"terrainMemoryUsage"</span>             </span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>[<span class="dv">11</span>] <span class="st">"MTolerance"</span>                      <span class="st">"compression"</span>                    </span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>[<span class="dv">13</span>] <span class="st">"coincidentPoints"</span>                <span class="st">"baUseDetailedAggregation"</span>       </span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>[<span class="dv">15</span>] <span class="st">"timeZone"</span>                        <span class="st">"randomGenerator"</span>                </span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>[<span class="dv">17</span>] <span class="st">"outputCoordinateSystem"</span>          <span class="st">"rasterStatistics"</span>               </span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>[<span class="dv">19</span>] <span class="st">"transferGDBAttributeProperties"</span>  <span class="st">"ZDomain"</span>                        </span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>[<span class="dv">21</span>] <span class="st">"cellSizeProjectionMethod"</span>        <span class="st">"maintainCurveSegments"</span>          </span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>[<span class="dv">23</span>] <span class="st">"transferDomains"</span>                 <span class="st">"S100FeatureCatalogueFile"</span>       </span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>[<span class="dv">25</span>] <span class="st">"maintainAttachments"</span>             <span class="st">"resamplingMethod"</span>               </span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>[<span class="dv">27</span>] <span class="st">"snapRaster"</span>                      <span class="st">"cartographicCoordinateSystem"</span>   </span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>[<span class="dv">29</span>] <span class="st">"baNetworkSource"</span>                 <span class="st">"configKeyword"</span>                  </span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>[<span class="dv">31</span>] <span class="st">"matchMultidimensionalVariable"</span>   <span class="st">"outputZFlag"</span>                    </span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>[<span class="dv">33</span>] <span class="st">"qualifiedFieldNames"</span>             <span class="st">"tileSize"</span>                       </span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>[<span class="dv">35</span>] <span class="st">"annotationTextStringFieldLength"</span> <span class="st">"parallelProcessingFactor"</span>       </span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>[<span class="dv">37</span>] <span class="st">"pyramid"</span>                         <span class="st">"referenceScale"</span>                 </span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>[<span class="dv">39</span>] <span class="st">"processingServer"</span>                <span class="st">"extent"</span>                         </span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>[<span class="dv">41</span>] <span class="st">"unionDimension"</span>                  <span class="st">"XYTolerance"</span>                    </span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>[<span class="dv">43</span>] <span class="st">"daylightSaving"</span>                  <span class="st">"tinSaveVersion"</span>                 </span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>[<span class="dv">45</span>] <span class="st">"nodata"</span>                          <span class="st">"MDomain"</span>                        </span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>[<span class="dv">47</span>] <span class="st">"cellSize"</span>                        <span class="st">"outputZValue"</span>                   </span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>[<span class="dv">49</span>] <span class="st">"outputMFlag"</span>                     <span class="st">"cellAlignment"</span>                  </span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>[<span class="dv">51</span>] <span class="st">"geographicTransformations"</span>       <span class="st">"ZResolution"</span>                    </span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>[<span class="dv">53</span>] <span class="st">"mask"</span>                            <span class="st">"processorType"</span>                  </span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>[<span class="dv">55</span>] <span class="st">"maintainSpatialIndex"</span>            <span class="st">"preserveGlobalIds"</span>              </span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>[<span class="dv">57</span>] <span class="st">"workspace"</span>                       <span class="st">"retryOnFailures"</span>                </span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>[<span class="dv">59</span>] <span class="st">"MResolution"</span>                     <span class="st">"baDataSource"</span>                   </span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>[<span class="dv">61</span>] <span class="st">"ZTolerance"</span>                      <span class="st">"scratchGDB"</span>                     </span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>[<span class="dv">63</span>] <span class="st">"scratchFolder"</span>                   <span class="st">"packageWorkspace"</span>               </span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a>[<span class="dv">65</span>] <span class="st">"scriptWorkspace"</span>                 <span class="st">"addOutputsToMap"</span>                </span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a>[<span class="dv">67</span>] <span class="st">"buildStatsAndRATForTempRaster"</span>   <span class="st">"autoCancelling"</span>                 </span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a>[<span class="dv">69</span>] <span class="st">"isCancelled"</span>                     <span class="st">"overwriteOutput"</span>  </span></code></pre></div>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside>
