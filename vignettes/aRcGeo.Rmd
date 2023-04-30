@@ -59,8 +59,43 @@ reticulate::conda_list() |>
 
 After confirming the name of the conda environment where `arcpy` exists, we can call `init_arcpy()` to initialize an ArcGIS connection:
 
-```{r}
+```{r, eval=FALSE}
 aRcGeo::init_arcpy(conda_env = "arcgispro-py3-DeepLearning")
+```
+
+Output:
+
+``` {r, eval=FALSE}         
+-- Initializing Connection ---------------------------------------------------------------------
+> Initializing Connection to ArcGIS.
+
+-- Checking Conda Environment ---------------------------------------------------------------------
+i All Local Conda Environments:
+[1] "base"                       
+[2] "Python_Image_Processing"    
+[3] "arcgispro-py3-DeepLearning" 
+[4] "r-miniconda"               
+[5] "r-reticulate"              
+v Using conda environment: arcgispro-py3-DeepLearning
+v An `arcpy` module successfully imported.                              
+i ArcGIS Product Details:   
+$license                    
+[1] "Advanced"
+
+$version
+[1] "13.1.0.41833"
+
+$path
+[1] "C:\\Program Files\\ArcGIS\\Pro\\"
+
+$dll
+[1] "rarcproxy_pro"
+
+$app
+[1] "ArcGIS Pro"
+
+$pkg_ver
+[1] "1.0.1.300"
 ```
 
 ## Examples of `arcpy` Functionality
@@ -69,6 +104,47 @@ If the function call completed without an error, then the user should now see `a
 
 Here is a basic call to the `ListEnvironments()` function in `arcypy`.
 
-```{r}
+```{r, eval=FALSE}
 arcpy$ListEnvironments()
 ```
+
+Output:
+
+```{r, eval=FALSE}
+ [1] "autoCommit"                      "XYResolution"                   
+ [3] "processingServerUser"            "gpuId"                          
+ [5] "XYDomain"                        "processingServerPassword"       
+ [7] "scratchWorkspace"                "recycleProcessingWorkers"       
+ [9] "cartographicPartitions"          "terrainMemoryUsage"             
+[11] "MTolerance"                      "compression"                    
+[13] "coincidentPoints"                "baUseDetailedAggregation"       
+[15] "timeZone"                        "randomGenerator"                
+[17] "outputCoordinateSystem"          "rasterStatistics"               
+[19] "transferGDBAttributeProperties"  "ZDomain"                        
+[21] "cellSizeProjectionMethod"        "maintainCurveSegments"          
+[23] "transferDomains"                 "S100FeatureCatalogueFile"       
+[25] "maintainAttachments"             "resamplingMethod"               
+[27] "snapRaster"                      "cartographicCoordinateSystem"   
+[29] "baNetworkSource"                 "configKeyword"                  
+[31] "matchMultidimensionalVariable"   "outputZFlag"                    
+[33] "qualifiedFieldNames"             "tileSize"                       
+[35] "annotationTextStringFieldLength" "parallelProcessingFactor"       
+[37] "pyramid"                         "referenceScale"                 
+[39] "processingServer"                "extent"                         
+[41] "unionDimension"                  "XYTolerance"                    
+[43] "daylightSaving"                  "tinSaveVersion"                 
+[45] "nodata"                          "MDomain"                        
+[47] "cellSize"                        "outputZValue"                   
+[49] "outputMFlag"                     "cellAlignment"                  
+[51] "geographicTransformations"       "ZResolution"                    
+[53] "mask"                            "processorType"                  
+[55] "maintainSpatialIndex"            "preserveGlobalIds"              
+[57] "workspace"                       "retryOnFailures"                
+[59] "MResolution"                     "baDataSource"                   
+[61] "ZTolerance"                      "scratchGDB"                     
+[63] "scratchFolder"                   "packageWorkspace"               
+[65] "scriptWorkspace"                 "addOutputsToMap"                
+[67] "buildStatsAndRATForTempRaster"   "autoCancelling"                 
+[69] "isCancelled"                     "overwriteOutput"  
+```
+
